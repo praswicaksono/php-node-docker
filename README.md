@@ -7,10 +7,8 @@ A Docker image with PHP 8.3, Node.js 22, and development tools. Easy-to-use imag
 ### Pull the Image
 
 ```bash
-docker pull ghcr.io/username/php-node-docker:latest
+docker pull ghcr.io/praswicaksono/php-node-docker:latest
 ```
-
-Replace `username` with your GitHub username.
 
 ## Usage Examples
 
@@ -19,13 +17,13 @@ Replace `username` with your GitHub username.
 Install dependencies in your project directory:
 
 ```bash
-docker run --rm -v $(pwd):/app ghcr.io/username/php-node-docker:latest composer install
+docker run --rm -v $(pwd):/app ghcr.io/praswicaksono/php-node-docker:latest composer install
 ```
 
 Run any Composer command:
 
 ```bash
-docker run --rm -v $(pwd):/app ghcr.io/username/php-node-docker:latest composer require vendor/package
+docker run --rm -v $(pwd):/app ghcr.io/praswicaksono/php-node-docker:latest composer require vendor/package
 ```
 
 ### Run npm Commands
@@ -33,19 +31,19 @@ docker run --rm -v $(pwd):/app ghcr.io/username/php-node-docker:latest composer 
 Install Node.js dependencies:
 
 ```bash
-docker run --rm -v $(pwd):/app ghcr.io/username/php-node-docker:latest npm install
+docker run --rm -v $(pwd):/app ghcr.io/praswicaksono/php-node-docker:latest npm install
 ```
 
 Run a script:
 
 ```bash
-docker run --rm -v $(pwd):/app ghcr.io/username/php-node-docker:latest npm run build
+docker run --rm -v $(pwd):/app ghcr.io/praswicaksono/php-node-docker:latest npm run build
 ```
 
 ### Run Yarn Commands
 
 ```bash
-docker run --rm -v $(pwd):/app ghcr.io/username/php-node-docker:latest yarn install
+docker run --rm -v $(pwd):/app ghcr.io/praswicaksono/php-node-docker:latest yarn install
 ```
 
 ## Create an Alias (Optional)
@@ -53,7 +51,7 @@ docker run --rm -v $(pwd):/app ghcr.io/username/php-node-docker:latest yarn inst
 For easier command usage, add this to your shell profile (`.zshrc`, `.bashrc`, etc.):
 
 ```bash
-alias docker-dev='docker run --rm -v $(pwd):/app ghcr.io/username/php-node-docker:latest'
+alias docker-dev='docker run --rm -v $(pwd):/app ghcr.io/praswicaksono/php-node-docker:latest'
 ```
 
 Then use it like:
@@ -79,7 +77,6 @@ docker-dev yarn build
 - **Always use `-v $(pwd):/app`** - This mounts your current directory into the container
 - **Use `--rm`** - Automatically removes the container after execution
 - **Work in any directory** - The image works with projects in any folder
-- **Replace `username`** - Use your actual GitHub username in the image URL
 
 ## Troubleshooting
 
@@ -89,15 +86,6 @@ If you encounter permission issues with created files:
 
 ```bash
 sudo chown -R $USER:$USER .
-```
-
-### Image Not Found
-
-Make sure the image name is correct and you have access:
-
-```bash
-docker login ghcr.io
-docker pull ghcr.io/username/php-node-docker:latest
 ```
 
 ## Support
